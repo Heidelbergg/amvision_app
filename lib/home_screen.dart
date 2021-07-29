@@ -1,33 +1,35 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_image_slideshow/flutter_image_slideshow.dart';
-
+import 'package:carousel_slider/carousel_slider.dart';
 
 class HomeScreen extends StatefulWidget {
   @override
   _HomescreenState createState() => _HomescreenState();
 }
 
+// Home screen class
 class _HomescreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       extendBodyBehindAppBar: true,
-        drawerScrimColor: Colors.grey,
-        appBar: AppBar(
-          backgroundColor: Colors.transparent,
-          elevation: 0,
-        ),
-        drawer: buildDrawer(),
+      drawerScrimColor: Colors.grey,
+      appBar: AppBar(
+        backgroundColor: Colors.transparent,
+        elevation: 0,
+      ),
+      drawer: buildDrawer(),
       body: buildBody(),
     );
   }
 
+  // Drawer on the left side of the screen
   Widget buildDrawer() {
     return FractionallySizedBox(
       alignment: Alignment.bottomLeft,
       child: Container(
         height: MediaQuery.of(context).size.height,
-        padding: EdgeInsets.only(top: MediaQuery.of(context).padding.top, bottom: 250),
+        padding: EdgeInsets.only(
+            top: MediaQuery.of(context).padding.top, bottom: 250),
         child: ClipRRect(
           borderRadius: BorderRadius.only(
               topRight: Radius.circular(10), bottomRight: Radius.circular(150)),
@@ -84,6 +86,9 @@ class _HomescreenState extends State<HomeScreen> {
                       Navigator.pop(context);
                     },
                   ),
+                 /* buildprices(),
+                  buildbooking(),
+                  buildaboutus(),*/
                 ],
               ),
             ),
@@ -93,6 +98,7 @@ class _HomescreenState extends State<HomeScreen> {
     );
   }
 
+  // Body for the home screen - call other buildmethods for the elements
   Widget buildBody() {
     return Container(
       decoration: BoxDecoration(
@@ -103,56 +109,83 @@ class _HomescreenState extends State<HomeScreen> {
         ),
       ),
       child: ListView(
-        padding: EdgeInsets.all(32),
+        //padding: EdgeInsets.all(32),
         children: [
-          buildbackgroundbody()
+          buildslideshow(),
         ],
       ),
     );
   }
 
-  Widget buildbackgroundbody() {
+  // slideshow at the top of homescreen
+  Widget buildslideshow() {
     return Column(
       children: [
-        const SizedBox(height: 45,),
         Text(
           'AM Vision',
           style: TextStyle(
-            fontSize: 24,
-            fontWeight: FontWeight.bold,
-            fontFamily: 'Times New Roman'
-          ),
+              fontSize: 24,
+              fontWeight: FontWeight.bold,
+              fontFamily: 'Times New Roman'),
         ),
         Container(
           padding: EdgeInsets.only(top: 50),
-          child: ImageSlideshow(
-            width: double.infinity,
-            height: 250,
-            initialPage: 0,
-            indicatorBackgroundColor: Colors.grey,
-            children: [
-              Image.asset(
-                "assets/images/img1.jpg",
-                fit: BoxFit.fill,
+          child: CarouselSlider(
+            options: CarouselOptions(
+              height: 450,
+              autoPlay: true,
+              enlargeCenterPage: true,
+              viewportFraction: 0.9,
+              aspectRatio: 2.0,
+              initialPage: 0,
+              autoPlayAnimationDuration: Duration(seconds: 3),
+            ),
+            items: [
+              ClipRRect(
+                borderRadius: BorderRadius.only(
+                    bottomRight: Radius.elliptical(200, 200),
+                    topLeft: Radius.circular(50)),
+                child: Image.asset(
+                  "assets/images/img1.jpg",
+                  fit: BoxFit.cover,
+                ),
               ),
-              Image.asset(
-                "assets/images/img2.jpg",
-                fit: BoxFit.fill,
+              ClipRRect(
+                borderRadius: BorderRadius.only(
+                    bottomRight: Radius.elliptical(200, 200),
+                    topLeft: Radius.circular(50)),
+                child: Image.asset(
+                  "assets/images/img2.jpg",
+                  fit: BoxFit.cover,
+                ),
               ),
-              Image.asset(
-                "assets/images/img3.jpg",
-                fit: BoxFit.fill,
+              ClipRRect(
+                borderRadius: BorderRadius.only(
+                    bottomRight: Radius.elliptical(200, 200),
+                    topLeft: Radius.circular(50)),
+                child: Image.asset(
+                  "assets/images/img3.jpg",
+                  fit: BoxFit.cover,
+                ),
               ),
-              Image.asset(
-                "assets/images/img4.jpg",
-                fit: BoxFit.fill,
+              ClipRRect(
+                borderRadius: BorderRadius.only(
+                    bottomRight: Radius.elliptical(200, 200),
+                    topLeft: Radius.circular(50)),
+                child: Image.asset(
+                  "assets/images/img4.jpg",
+                  fit: BoxFit.cover,
+                ),
               ),
             ],
-            autoPlayInterval: 3000,
           ),
         ),
-        ],
+        buildgallery(),
+      ],
     );
   }
-}
 
+  Widget buildgallery() {
+    return Container();
+  }
+}

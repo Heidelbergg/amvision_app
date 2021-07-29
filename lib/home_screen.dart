@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_image_slideshow/flutter_image_slideshow.dart';
 
 
 class HomeScreen extends StatefulWidget {
@@ -32,7 +33,7 @@ class _HomescreenState extends State<HomeScreen> {
               topRight: Radius.circular(10), bottomRight: Radius.circular(150)),
           child: Theme(
             data: Theme.of(context).copyWith(
-              canvasColor: Colors.white70,
+              canvasColor: Colors.white60,
             ),
             child: Drawer(
               child: ListView(
@@ -96,12 +97,61 @@ class _HomescreenState extends State<HomeScreen> {
     return Container(
       decoration: BoxDecoration(
         gradient: LinearGradient(
-          colors: [Colors.grey, Colors.white70],
+          colors: [Colors.grey, Colors.white10],
           begin: Alignment.bottomRight,
           end: Alignment.topLeft,
         ),
       ),
+      child: ListView(
+        padding: EdgeInsets.all(32),
+        children: [
+          buildbackgroundbody()
+        ],
+      ),
+    );
+  }
 
+  Widget buildbackgroundbody() {
+    return Column(
+      children: [
+        const SizedBox(height: 45,),
+        Text(
+          'AM Vision',
+          style: TextStyle(
+            fontSize: 24,
+            fontWeight: FontWeight.bold,
+            fontFamily: 'Times New Roman'
+          ),
+        ),
+        Container(
+          padding: EdgeInsets.only(top: 50),
+          child: ImageSlideshow(
+            width: double.infinity,
+            height: 250,
+            initialPage: 0,
+            indicatorBackgroundColor: Colors.grey,
+            children: [
+              Image.asset(
+                "assets/images/img1.jpg",
+                fit: BoxFit.fill,
+              ),
+              Image.asset(
+                "assets/images/img2.jpg",
+                fit: BoxFit.fill,
+              ),
+              Image.asset(
+                "assets/images/img3.jpg",
+                fit: BoxFit.fill,
+              ),
+              Image.asset(
+                "assets/images/img4.jpg",
+                fit: BoxFit.fill,
+              ),
+            ],
+            autoPlayInterval: 3000,
+          ),
+        ),
+        ],
     );
   }
 }

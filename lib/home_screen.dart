@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
+import 'package:animated_text_kit/animated_text_kit.dart';
 
 class HomeScreen extends StatefulWidget {
   @override
@@ -86,7 +87,7 @@ class _HomescreenState extends State<HomeScreen> {
                       Navigator.pop(context);
                     },
                   ),
-                 /* buildprices(),
+                  /* buildprices(),
                   buildbooking(),
                   buildaboutus(),*/
                 ],
@@ -109,7 +110,8 @@ class _HomescreenState extends State<HomeScreen> {
         ),
       ),
       child: ListView(
-        //padding: EdgeInsets.all(32),
+        padding: EdgeInsets.only(top: 24),
+        // Override the default appbar restriction for widgets
         children: [
           buildslideshow(),
         ],
@@ -121,21 +123,13 @@ class _HomescreenState extends State<HomeScreen> {
   Widget buildslideshow() {
     return Column(
       children: [
-        Text(
-          'AM Vision',
-          style: TextStyle(
-              fontSize: 24,
-              fontWeight: FontWeight.bold,
-              fontFamily: 'Times New Roman'),
-        ),
         Container(
-          padding: EdgeInsets.only(top: 50),
           child: CarouselSlider(
             options: CarouselOptions(
-              height: 450,
+              height: 600,
               autoPlay: true,
               enlargeCenterPage: true,
-              viewportFraction: 0.9,
+              viewportFraction: 1,
               aspectRatio: 2.0,
               initialPage: 0,
               autoPlayAnimationDuration: Duration(seconds: 3),
@@ -143,43 +137,71 @@ class _HomescreenState extends State<HomeScreen> {
             items: [
               ClipRRect(
                 borderRadius: BorderRadius.only(
-                    bottomRight: Radius.elliptical(200, 200),
-                    topLeft: Radius.circular(50)),
+                  bottomRight: Radius.elliptical(200, 200),
+                ),
                 child: Image.asset(
-                  "assets/images/img1.jpg",
+                  "assets/images/image00001.jpeg",
                   fit: BoxFit.cover,
                 ),
               ),
               ClipRRect(
                 borderRadius: BorderRadius.only(
-                    bottomRight: Radius.elliptical(200, 200),
-                    topLeft: Radius.circular(50)),
+                  bottomRight: Radius.elliptical(200, 200),
+                ),
                 child: Image.asset(
-                  "assets/images/img2.jpg",
+                  "assets/images/image00003.jpeg",
                   fit: BoxFit.cover,
                 ),
               ),
               ClipRRect(
                 borderRadius: BorderRadius.only(
-                    bottomRight: Radius.elliptical(200, 200),
-                    topLeft: Radius.circular(50)),
+                  bottomRight: Radius.elliptical(200, 200),
+                ),
                 child: Image.asset(
-                  "assets/images/img3.jpg",
+                  "assets/images/image00007.jpeg",
                   fit: BoxFit.cover,
                 ),
               ),
               ClipRRect(
                 borderRadius: BorderRadius.only(
-                    bottomRight: Radius.elliptical(200, 200),
-                    topLeft: Radius.circular(50)),
+                  bottomRight: Radius.elliptical(200, 200),
+                ),
                 child: Image.asset(
-                  "assets/images/img4.jpg",
+                  "assets/images/image00010.jpeg",
                   fit: BoxFit.cover,
                 ),
               ),
             ],
           ),
         ),
+        AnimatedTextKit(
+          animatedTexts: [
+            TypewriterAnimatedText(
+              "AM Vision",
+              textStyle: const TextStyle(
+                fontSize: 32,
+                fontWeight: FontWeight.bold,
+                height: 3
+              ),
+              speed: const Duration(milliseconds: 750),
+            ),
+          ],
+          isRepeatingAnimation: true,
+          repeatForever: true,
+          pause: const Duration(milliseconds: 100),
+          stopPauseOnTap: true,
+        ),
+/*        const SizedBox(height: 50,),
+        AnimatedTextKit(
+          animatedTexts: [
+            RotateAnimatedText('Professional'),
+            RotateAnimatedText('Visionary'),
+            RotateAnimatedText('Innovator'),
+          ],
+          isRepeatingAnimation: true,
+          repeatForever: true,
+          pause: const Duration(milliseconds: 1000),
+        ),*/
         buildgallery(),
       ],
     );

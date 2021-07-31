@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:animated_text_kit/animated_text_kit.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class HomeScreen extends StatefulWidget {
   @override
@@ -26,11 +27,9 @@ class _HomescreenState extends State<HomeScreen> {
   // Drawer on the left side of the screen
   Widget buildDrawer() {
     return FractionallySizedBox(
-      alignment: Alignment.bottomLeft,
       child: Container(
         height: MediaQuery.of(context).size.height,
-        padding: EdgeInsets.only(
-            top: MediaQuery.of(context).padding.top, bottom: 250),
+        padding: EdgeInsets.only(top: MediaQuery.of(context).padding.top, bottom: 250),
         child: ClipRRect(
           borderRadius: BorderRadius.only(
               topRight: Radius.circular(10), bottomRight: Radius.circular(150)),
@@ -40,7 +39,7 @@ class _HomescreenState extends State<HomeScreen> {
             ),
             child: Drawer(
               child: ListView(
-                padding: EdgeInsets.only(top: 10),
+                //padding: EdgeInsets.only(top: 10),
                 children: [
                   SizedBox(
                     height: 170.0,
@@ -61,20 +60,20 @@ class _HomescreenState extends State<HomeScreen> {
                   ),
                   ListTile(
                       contentPadding: EdgeInsets.only(top: 30, left: 16),
-                      leading: Icon(Icons.home),
+                      leading: Icon(FontAwesomeIcons.home),
                       title: const Text("Home"),
                       onTap: () {
                         Navigator.pop(context);
                       }),
                   ListTile(
-                      leading: Icon(Icons.attach_money),
+                      leading: Icon(FontAwesomeIcons.dollarSign),
                       title: const Text("Prices"),
                       onTap: () {
                         Navigator.pop(context);
                       }),
                   ListTile(
                     title: const Text("Booking"),
-                    leading: Icon(Icons.perm_contact_calendar),
+                    leading: Icon(FontAwesomeIcons.calendarAlt),
                     onTap: () {
                       Navigator.pop(context);
                     },
@@ -82,7 +81,7 @@ class _HomescreenState extends State<HomeScreen> {
                   ListTile(
                     contentPadding: EdgeInsets.only(top: 3, left: 16),
                     title: const Text("About Us"),
-                    leading: Icon(Icons.account_circle),
+                    leading: Icon(FontAwesomeIcons.addressCard),
                     onTap: () {
                       Navigator.pop(context);
                     },
@@ -110,7 +109,8 @@ class _HomescreenState extends State<HomeScreen> {
         ),
       ),
       child: ListView(
-        padding: EdgeInsets.only(top: 24),
+        // Align the dimensions with the top 
+        padding: EdgeInsets.only(top: MediaQuery.of(context).padding.top),
         // Override the default appbar restriction for widgets
         children: [
           buildslideshow(),
@@ -121,12 +121,12 @@ class _HomescreenState extends State<HomeScreen> {
 
   // slideshow at the top of homescreen
   Widget buildslideshow() {
-    return Column(
-      children: [
-        Container(
-          child: CarouselSlider(
+    return Container(
+      child: Column(
+        children: [
+          CarouselSlider(
             options: CarouselOptions(
-              height: 600,
+              height: 650,
               autoPlay: true,
               enlargeCenterPage: true,
               viewportFraction: 1,
@@ -173,37 +173,23 @@ class _HomescreenState extends State<HomeScreen> {
               ),
             ],
           ),
-        ),
-        AnimatedTextKit(
-          animatedTexts: [
-            TypewriterAnimatedText(
-              "AM Vision",
-              textStyle: const TextStyle(
-                fontSize: 32,
-                fontWeight: FontWeight.bold,
-                height: 3
+          AnimatedTextKit(
+            animatedTexts: [
+              TypewriterAnimatedText(
+                "AM Vision",
+                textStyle: const TextStyle(
+                    fontSize: 32, fontWeight: FontWeight.bold, height: 3),
+                speed: const Duration(milliseconds: 450),
               ),
-              speed: const Duration(milliseconds: 750),
-            ),
-          ],
-          isRepeatingAnimation: true,
-          repeatForever: true,
-          pause: const Duration(milliseconds: 100),
-          stopPauseOnTap: true,
-        ),
-/*        const SizedBox(height: 50,),
-        AnimatedTextKit(
-          animatedTexts: [
-            RotateAnimatedText('Professional'),
-            RotateAnimatedText('Visionary'),
-            RotateAnimatedText('Innovator'),
-          ],
-          isRepeatingAnimation: true,
-          repeatForever: true,
-          pause: const Duration(milliseconds: 1000),
-        ),*/
-        buildgallery(),
-      ],
+            ],
+            isRepeatingAnimation: true,
+            repeatForever: true,
+            pause: const Duration(milliseconds: 100),
+            stopPauseOnTap: true,
+          ),
+          buildgallery(),
+        ],
+      ),
     );
   }
 

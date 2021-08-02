@@ -225,7 +225,6 @@ class _HomescreenState extends State<HomeScreen> {
                   shape: MaterialStateProperty.all<RoundedRectangleBorder>(
                     RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(30),
-                      side: BorderSide(color: Colors.black),
                     ),
                   ),
                 ),
@@ -259,7 +258,6 @@ class _HomescreenState extends State<HomeScreen> {
                   shape: MaterialStateProperty.all<RoundedRectangleBorder>(
                     RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(30),
-                      side: BorderSide(color: Colors.black),
                     ),
                   ),
                 ),
@@ -293,7 +291,6 @@ class _HomescreenState extends State<HomeScreen> {
                   shape: MaterialStateProperty.all<RoundedRectangleBorder>(
                     RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(30),
-                      side: BorderSide(color: Colors.black),
                     ),
                   ),
                 ),
@@ -327,7 +324,6 @@ class _HomescreenState extends State<HomeScreen> {
                   shape: MaterialStateProperty.all<RoundedRectangleBorder>(
                     RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(30),
-                      side: BorderSide(color: Colors.black),
                     ),
                   ),
                 ),

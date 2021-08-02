@@ -186,7 +186,7 @@ class PricesState extends State<Prices> {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Text(
-                "Baby Pack",
+                "Toddler Pack",
                 style: TextStyle(
                     fontSize: 24,
                     fontWeight: FontWeight.w200,
@@ -196,6 +196,43 @@ class PricesState extends State<Prices> {
               const SizedBox(height: 5,),
               Text(
                 "1999 DDK",
+                textAlign: TextAlign.start,
+                style: TextStyle(
+                    fontSize: 14,
+                    fontWeight: FontWeight.w200,
+                    color: Colors.white
+                ),
+              ),
+            ],
+          ),
+        ),
+        const SizedBox(height: 30,),
+
+        Container(
+          width: 250,
+          height: 150,
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.all(Radius.circular(30)),
+            gradient: LinearGradient(
+              colors: [Colors.black54, Colors.grey],
+              begin: Alignment.bottomRight,
+              end: Alignment.topLeft,
+            ),
+          ),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Text(
+                "Family Portrait",
+                style: TextStyle(
+                    fontSize: 24,
+                    fontWeight: FontWeight.w200,
+                    color: Colors.white
+                ),
+              ),
+              const SizedBox(height: 5,),
+              Text(
+                "1499 DDK",
                 textAlign: TextAlign.start,
                 style: TextStyle(
                     fontSize: 14,

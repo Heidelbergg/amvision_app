@@ -28,13 +28,34 @@ class _HomescreenState extends State<HomeScreen> {
     );
   }
 
+  // Body for the home screen - call other buildmethods for the elements
+  Widget buildBody() {
+    return Container(
+      decoration: BoxDecoration(
+        gradient: LinearGradient(
+          colors: [Colors.grey, Colors.white10],
+          begin: Alignment.bottomRight,
+          end: Alignment.topLeft,
+        ),
+      ),
+      child: ListView(
+        // Align the dimensions with the top
+        padding: EdgeInsets.only(top: MediaQuery.of(context).padding.top),
+        // Override the default appbar restriction for widgets
+        children: [
+          buildslideshow(),
+        ],
+      ),
+    );
+  }
+
+
   // Drawer on the left side of the screen
   Widget buildDrawer() {
     return FractionallySizedBox(
       child: Container(
         height: MediaQuery.of(context).size.height,
-        padding: EdgeInsets.only(
-            top: MediaQuery.of(context).padding.top, bottom: 250),
+        padding: EdgeInsets.only(top: MediaQuery.of(context).padding.top, bottom: 250),
         child: ClipRRect(
           borderRadius: BorderRadius.only(
               topRight: Radius.circular(10), bottomRight: Radius.circular(150)),
@@ -106,27 +127,6 @@ class _HomescreenState extends State<HomeScreen> {
             ),
           ),
         ),
-      ),
-    );
-  }
-
-  // Body for the home screen - call other buildmethods for the elements
-  Widget buildBody() {
-    return Container(
-      decoration: BoxDecoration(
-        gradient: LinearGradient(
-          colors: [Colors.grey, Colors.white10],
-          begin: Alignment.bottomRight,
-          end: Alignment.topLeft,
-        ),
-      ),
-      child: ListView(
-        // Align the dimensions with the top
-        padding: EdgeInsets.only(top: MediaQuery.of(context).padding.top),
-        // Override the default appbar restriction for widgets
-        children: [
-          buildslideshow(),
-        ],
       ),
     );
   }

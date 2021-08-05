@@ -1,5 +1,6 @@
 import 'package:amvision_app/screens/home_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:cool_alert/cool_alert.dart';
 
 // Possibly add a reference to a site where booking can be done (Both made for web and mobile platforms)
 
@@ -11,7 +12,7 @@ class Bookings extends StatefulWidget {
 }
 
 class BookingsState extends State<Bookings> {
-  String dropdownValue = 'Photo Shoot';
+  String dropdownValue = '!SEE PRICES TAB FOR MORE INFORMATION!';
 
   @override
   Widget build(BuildContext context) {
@@ -88,12 +89,21 @@ class BookingsState extends State<Bookings> {
                   });
                 },
                 items: <String>[
-                  'Photo Shoot',
-                  'Video Shoot',
-                  'Marriage Pack',
-                  'Toddler Portrait',
-                  'Family Portrait',
-                  'Graduate Portrait'
+                  '!SEE PRICES TAB FOR MORE INFORMATION!',
+                  'Studio Photography (1)',
+                  'Studio Photography (2)',
+                  'Studio Photography (3)',
+                  'Outdoor Photography (1)',
+                  'Outdoor Photography (2)',
+                  'Outdoor Photography (3)',
+                  'Outdoor Photography (4)',
+                  'Events Photography (1)',
+                  'Events Photography (2)',
+                  'Events Photography (3)',
+                  'Videography (1)',
+                  'Videography (2)',
+                  'Videography (3)',
+                  'Videography (4)',
                 ].map<DropdownMenuItem<String>>((String value) {
                   return DropdownMenuItem<String>(
                     value: value,
@@ -112,13 +122,12 @@ class BookingsState extends State<Bookings> {
                 width: 150,
                 child: TextFormField(
                   decoration: InputDecoration(
-                      border: UnderlineInputBorder(),
-                      labelText: 'Name'),
+                      border: UnderlineInputBorder(), labelText: 'Name'),
                 ),
               ),
-
-              const SizedBox(width: 40,),
-
+              const SizedBox(
+                width: 40,
+              ),
               SizedBox(
                 width: 150,
                 child: TextFormField(
@@ -127,11 +136,9 @@ class BookingsState extends State<Bookings> {
                       labelText: 'Phone Number'),
                 ),
               ),
-
             ],
           ),
         ),
-
         Container(
           padding: EdgeInsets.only(top: 20, left: 20),
           child: Row(
@@ -140,39 +147,34 @@ class BookingsState extends State<Bookings> {
                 width: 150,
                 child: TextFormField(
                   decoration: InputDecoration(
-                      border: UnderlineInputBorder(),
-                      labelText: 'Address'),
+                      border: UnderlineInputBorder(), labelText: 'Address'),
                 ),
               ),
-
-              const SizedBox(width: 40,),
-
+              const SizedBox(
+                width: 40,
+              ),
               SizedBox(
                 width: 150,
                 child: TextFormField(
                   decoration: InputDecoration(
-                      border: UnderlineInputBorder(),
-                      labelText: 'E-Mail'),
+                      border: UnderlineInputBorder(), labelText: 'E-Mail'),
                 ),
               ),
-
             ],
           ),
         ),
-
-        const SizedBox(height: 50,),
-
+        const SizedBox(
+          height: 50,
+        ),
         Container(
           child: SizedBox(
             width: 250,
             child: TextFormField(
               decoration: InputDecoration(
-                  border: UnderlineInputBorder(),
-                  labelText: 'Comments'),
+                  border: UnderlineInputBorder(), labelText: 'Comments'),
             ),
           ),
         ),
-
         Container(
           padding: EdgeInsets.only(top: 75),
           alignment: Alignment.center,
@@ -191,20 +193,24 @@ class BookingsState extends State<Bookings> {
                 ),
               ),
               onPressed: () {
-                Navigator.push(
-                    context, MaterialPageRoute(builder: (context) =>HomeScreen()));
+                CoolAlert.show(
+                  context: context,
+                  title: "Order Confirmation\n",
+                  type: CoolAlertType.success,
+                  text: "An order confirmation was sent to the email you provided. \n\n"
+                      "Check your spam folder if you are unable to find the email.",
+                  onConfirmBtnTap: () => Navigator.push(
+                      context, MaterialPageRoute(builder: (context) =>HomeScreen())),
+                );
+
               },
               child: Text(
                 "Submit",
-                style: TextStyle(
-                    fontSize: 20,
-                    fontWeight: FontWeight.w200
-                ),
+                style: TextStyle(fontSize: 20, fontWeight: FontWeight.w200),
               ),
             ),
           ),
         ),
-
       ],
     );
   }

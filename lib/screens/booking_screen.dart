@@ -197,11 +197,14 @@ class BookingsState extends State<Bookings> {
                   context: context,
                   title: "Order Confirmation\n",
                   type: CoolAlertType.success,
-                  text: "An order confirmation was sent to the email you provided. \n\n"
-                      "Check your spam folder if you are unable to find the email.",
+                  text: "A confirmation was sent to the email you provided. \n\n"
+                      "Check your spam folder if you are unable to find the email. \n\n "
+                      "You will be contacted further about your order.",
                   onConfirmBtnTap: () => Navigator.push(
                       context, MaterialPageRoute(builder: (context) =>HomeScreen())),
                 );
+
+                //send email to customer/owner
 
               },
               child: Text(

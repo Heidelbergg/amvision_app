@@ -55,7 +55,7 @@ class _HomescreenState extends State<HomeScreen> {
     return FractionallySizedBox(
       child: Container(
         height: MediaQuery.of(context).size.height,
-        padding: EdgeInsets.only(top: MediaQuery.of(context).padding.top, bottom: 250),
+        padding: EdgeInsets.only(top: MediaQuery.of(context).padding.top, bottom: MediaQuery.of(context).size.height / 2.5),
         child: ClipRRect(
           borderRadius: BorderRadius.only(
               topRight: Radius.circular(10), bottomRight: Radius.circular(150)),

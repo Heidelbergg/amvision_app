@@ -56,7 +56,7 @@ class VideoGraphyState extends State<VideoGraphy> {
               "(2) Production of 2-3 min. Video (Full HD ) 2 hour filming including editing: 3.000,- \n\n"
               "(3) Production of 4-6 min. Video (Full HD) 4 hour filming including editing: 5.000,- \n\n"
               "(4) Production of 5-10 min. Video (Full HD) 6 hour filming including editing: 10.000,- \n\n",
-              style: TextStyle(fontSize: 16, fontWeight: FontWeight.w200)),
+              style: TextStyle(fontSize: 18, fontWeight: FontWeight.w200)),
         ),
       ],
     );

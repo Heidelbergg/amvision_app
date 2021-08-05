@@ -56,7 +56,7 @@ class OutdoorPhotoState extends State<OutdoorPhoto> {
               "(2) Outdoor photoshoots 45 min - 1,5 hour with 20-60 pictures and 15 edited pictures by choice: 1.500,-\n\n"
               "(3) Outdoor photoshoots 1-2 hours with 50-100 pictures and 25 edited pictures by choice: 3000,-\n\n"
               "(4) Outdoor photoshoots 2-4 hour with 80-150 pictures and 35 edited pictures by choice: 6.000,-\n\n",
-              style: TextStyle(fontSize: 16, fontWeight: FontWeight.w200)),
+              style: TextStyle(fontSize: 18, fontWeight: FontWeight.w200)),
         ),
       ],
     );

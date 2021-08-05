@@ -1,3 +1,7 @@
+import 'package:amvision_app/prices_tabs/events_tab.dart';
+import 'package:amvision_app/prices_tabs/outdoor_tab.dart';
+import 'package:amvision_app/prices_tabs/studio_tab.dart';
+import 'package:amvision_app/prices_tabs/video_tab.dart';
 import 'package:flutter/material.dart';
 
 class Prices extends StatefulWidget {
@@ -53,39 +57,54 @@ class PricesState extends State<Prices> {
         ),
 
         // Photoshoot
-        Container(
-          width: 250,
-          height: 150,
-          decoration: BoxDecoration(
-            borderRadius: BorderRadius.all(Radius.circular(30)),
-            gradient: LinearGradient(
-              colors: [Colors.black54, Colors.grey],
-              begin: Alignment.bottomRight,
-              end: Alignment.topLeft,
+        ElevatedButton(
+          style: ButtonStyle(
+            backgroundColor: MaterialStateProperty.all(Colors.transparent),
+            elevation: MaterialStateProperty.all(0),
+            shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+              RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(30),
+              ),
             ),
           ),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Text(
-                "Photo Shoot",
-                style: TextStyle(
-                    fontSize: 24,
-                    fontWeight: FontWeight.w200,
-                    color: Colors.white
-                ),
+          onPressed: () {
+            Navigator.push(
+                context, MaterialPageRoute(builder: (context) =>StudioPhoto()));
+          },
+          child: Container(
+            width: 250,
+            height: 150,
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.all(Radius.circular(30)),
+              gradient: LinearGradient(
+                colors: [Colors.black54, Colors.grey],
+                begin: Alignment.bottomRight,
+                end: Alignment.topLeft,
               ),
-              const SizedBox(height: 5,),
-              Text(
-                "1000 DDK",
-                textAlign: TextAlign.start,
-                style: TextStyle(
-                    fontSize: 14,
-                    fontWeight: FontWeight.w200,
-                    color: Colors.white
+            ),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Text(
+                  "Studio Photography",
+                  style: TextStyle(
+                      fontSize: 24,
+                      fontWeight: FontWeight.w200,
+                      color: Colors.white
+                  ),
                 ),
-              ),
-            ],
+                const SizedBox(height: 10,),
+                Text(
+                  "Tap for more",
+                  textAlign: TextAlign.start,
+                  style: TextStyle(
+                      fontSize: 14,
+                      fontWeight: FontWeight.w200,
+                      color: Colors.white
+                  ),
+                ),
+              ],
+            ),
           ),
         ),
 
@@ -93,39 +112,54 @@ class PricesState extends State<Prices> {
 
         // Video
 
-        Container(
-          width: 250,
-          height: 150,
-          decoration: BoxDecoration(
-            borderRadius: BorderRadius.all(Radius.circular(30)),
-            gradient: LinearGradient(
-              colors: [Colors.black54, Colors.grey],
-              begin: Alignment.bottomRight,
-              end: Alignment.topLeft,
+        ElevatedButton(
+          style: ButtonStyle(
+            backgroundColor: MaterialStateProperty.all(Colors.transparent),
+            elevation: MaterialStateProperty.all(0),
+            shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+              RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(30),
+              ),
             ),
           ),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Text(
-                "Video Shoot",
-                style: TextStyle(
-                    fontSize: 24,
-                    fontWeight: FontWeight.w200,
-                    color: Colors.white
-                ),
+          onPressed: () {
+            Navigator.push(
+                context, MaterialPageRoute(builder: (context) =>OutdoorPhoto()));
+          },
+          child: Container(
+            width: 250,
+            height: 150,
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.all(Radius.circular(30)),
+              gradient: LinearGradient(
+                colors: [Colors.black54, Colors.grey],
+                begin: Alignment.bottomRight,
+                end: Alignment.topLeft,
               ),
-              const SizedBox(height: 5,),
-              Text(
-                "200 DDK PR. HOUR",
-                textAlign: TextAlign.start,
-                style: TextStyle(
-                    fontSize: 14,
-                    fontWeight: FontWeight.w200,
-                    color: Colors.white
+            ),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Text(
+                  "Outdoor Photography",
+                  style: TextStyle(
+                      fontSize: 24,
+                      fontWeight: FontWeight.w200,
+                      color: Colors.white
+                  ),
                 ),
-              ),
-            ],
+                const SizedBox(height: 10,),
+                Text(
+                  "Tap for more",
+                  textAlign: TextAlign.start,
+                  style: TextStyle(
+                      fontSize: 14,
+                      fontWeight: FontWeight.w200,
+                      color: Colors.white
+                  ),
+                ),
+              ],
+            ),
           ),
         ),
 
@@ -133,157 +167,110 @@ class PricesState extends State<Prices> {
 
         // Wedding pack
 
-        Container(
-          width: 250,
-          height: 150,
-          decoration: BoxDecoration(
-            borderRadius: BorderRadius.all(Radius.circular(30)),
-            gradient: LinearGradient(
-              colors: [Colors.black54, Colors.grey],
-              begin: Alignment.bottomRight,
-              end: Alignment.topLeft,
+        ElevatedButton(
+          style: ButtonStyle(
+            backgroundColor: MaterialStateProperty.all(Colors.transparent),
+            elevation: MaterialStateProperty.all(0),
+            shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+              RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(30),
+              ),
             ),
           ),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Text(
-                "Marriage Pack",
-                style: TextStyle(
-                    fontSize: 24,
-                    fontWeight: FontWeight.w200,
-                    color: Colors.white
-                ),
+          onPressed: () {
+            Navigator.push(
+                context, MaterialPageRoute(builder: (context) =>EventsPhoto()));
+          },
+          child: Container(
+            width: 250,
+            height: 150,
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.all(Radius.circular(30)),
+              gradient: LinearGradient(
+                colors: [Colors.black54, Colors.grey],
+                begin: Alignment.bottomRight,
+                end: Alignment.topLeft,
               ),
-              const SizedBox(height: 5,),
-              Text(
-                "3999 DDK",
-                textAlign: TextAlign.start,
-                style: TextStyle(
-                    fontSize: 14,
-                    fontWeight: FontWeight.w200,
-                    color: Colors.white
+            ),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Text(
+                  "Events Photography",
+                  style: TextStyle(
+                      fontSize: 24,
+                      fontWeight: FontWeight.w200,
+                      color: Colors.white
+                  ),
                 ),
-              ),
-            ],
+                const SizedBox(height: 10,),
+                Text(
+                  "Tap for more",
+                  textAlign: TextAlign.start,
+                  style: TextStyle(
+                      fontSize: 14,
+                      fontWeight: FontWeight.w200,
+                      color: Colors.white
+                  ),
+                ),
+              ],
+            ),
           ),
         ),
         const SizedBox(height: 30,),
 
         // Baby Pack
-        Container(
-          width: 250,
-          height: 150,
-          decoration: BoxDecoration(
-            borderRadius: BorderRadius.all(Radius.circular(30)),
-            gradient: LinearGradient(
-              colors: [Colors.black54, Colors.grey],
-              begin: Alignment.bottomRight,
-              end: Alignment.topLeft,
+        ElevatedButton(
+          style: ButtonStyle(
+            backgroundColor: MaterialStateProperty.all(Colors.transparent),
+            elevation: MaterialStateProperty.all(0),
+            shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+              RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(30),
+              ),
             ),
           ),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Text(
-                "Toddler Portrait",
-                style: TextStyle(
-                    fontSize: 24,
-                    fontWeight: FontWeight.w200,
-                    color: Colors.white
+            onPressed: () {
+              Navigator.push(
+                  context, MaterialPageRoute(builder: (context) =>VideoGraphy()));
+            },
+            child: Container(
+              width: 250,
+              height: 150,
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.all(Radius.circular(30)),
+                gradient: LinearGradient(
+                  colors: [Colors.black54, Colors.grey],
+                  begin: Alignment.bottomRight,
+                  end: Alignment.topLeft,
                 ),
               ),
-              const SizedBox(height: 5,),
-              Text(
-                "1999 DDK",
-                textAlign: TextAlign.start,
-                style: TextStyle(
-                    fontSize: 14,
-                    fontWeight: FontWeight.w200,
-                    color: Colors.white
-                ),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text(
+                    "Videography",
+                    style: TextStyle(
+                        fontSize: 24,
+                        fontWeight: FontWeight.w200,
+                        color: Colors.white
+                    ),
+                  ),
+                  const SizedBox(height: 10,),
+                  Text(
+                    "Tap for more",
+                    textAlign: TextAlign.start,
+                    style: TextStyle(
+                        fontSize: 14,
+                        fontWeight: FontWeight.w200,
+                        color: Colors.white
+                    ),
+                  ),
+                ],
               ),
-            ],
-          ),
-        ),
-        const SizedBox(height: 30,),
-
-        Container(
-          width: 250,
-          height: 150,
-          decoration: BoxDecoration(
-            borderRadius: BorderRadius.all(Radius.circular(30)),
-            gradient: LinearGradient(
-              colors: [Colors.black54, Colors.grey],
-              begin: Alignment.bottomRight,
-              end: Alignment.topLeft,
             ),
-          ),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Text(
-                "Family Portrait",
-                style: TextStyle(
-                    fontSize: 24,
-                    fontWeight: FontWeight.w200,
-                    color: Colors.white
-                ),
-              ),
-              const SizedBox(height: 5,),
-              Text(
-                "1499 DDK",
-                textAlign: TextAlign.start,
-                style: TextStyle(
-                    fontSize: 14,
-                    fontWeight: FontWeight.w200,
-                    color: Colors.white
-                ),
-              ),
-            ],
-          ),
         ),
-
         const SizedBox(height: 30,),
-
-        Container(
-          width: 250,
-          height: 150,
-          decoration: BoxDecoration(
-            borderRadius: BorderRadius.all(Radius.circular(30)),
-            gradient: LinearGradient(
-              colors: [Colors.black54, Colors.grey],
-              begin: Alignment.bottomRight,
-              end: Alignment.topLeft,
-            ),
-          ),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Text(
-                "Graduate Portrait",
-                style: TextStyle(
-                    fontSize: 24,
-                    fontWeight: FontWeight.w200,
-                    color: Colors.white
-                ),
-              ),
-              const SizedBox(height: 5,),
-              Text(
-                "999 DDK",
-                textAlign: TextAlign.start,
-                style: TextStyle(
-                    fontSize: 14,
-                    fontWeight: FontWeight.w200,
-                    color: Colors.white
-                ),
-              ),
-            ],
-          ),
-        ),
-
-        const SizedBox(height: 30,),
-
       ],
     );
   }

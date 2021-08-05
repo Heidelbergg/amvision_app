@@ -61,14 +61,11 @@ class AboutUsState extends State<AboutUs> {
         Container(
           padding: EdgeInsets.all(20),
           child: Text(
-              "Lorem ipsum dolor sit amet, consectetur adipiscing elit, "
-                  "sed do eiusmod tempor incididunt ut labore et dolore "
-                  "magna aliqua. Ut enim ad minim veniam, quis nostrud "
-                  "exercitation ullamco laboris nisi ut aliquip ex ea "
-                  "commodo consequat. Duis aute irure dolor in reprehenderit "
-                  "in voluptate velit esse cillum dolore eu fugiat nulla pariatur. "
-                  "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui"
-                  " officia deserunt mollit anim id est laborum.",
+              "Photographer Ariel M. Achiza. \n\n"
+                  "I'm a passionate photographer and videographer living in Odense in Denmark. "
+                  "I have experience with different type of photography and videography. "
+                  "I'm the founder of A. M. Vision, an epicentre of extraordinary photo- and videography. \n\n"
+                  " Portfolio: \n\n • Portraits \n • Art \n • Fashion \n • Dance \n • Family \n • Events",
               style: TextStyle(
                   fontSize: 16,
                   fontWeight: FontWeight.w200

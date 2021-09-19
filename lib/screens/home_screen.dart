@@ -22,6 +22,7 @@ class _HomescreenState extends State<HomeScreen> {
       appBar: AppBar(
         backgroundColor: Colors.transparent,
         elevation: 0,
+        iconTheme: IconThemeData(color: Colors.black),
       ),
       drawer: buildDrawer(),
       body: buildBody(),
@@ -205,6 +206,7 @@ class _HomescreenState extends State<HomeScreen> {
     );
   }
 
+  // Buttons at the bottom of the screen
   Widget buildgallery() {
     return Container(
       padding: EdgeInsets.only(top: 10, bottom: 10),

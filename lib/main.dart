@@ -1,3 +1,4 @@
+import 'package:animated_splash/animated_splash.dart';
 import 'package:flutter/material.dart';
 import 'screens/home_screen.dart';
 
@@ -12,10 +13,15 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         primaryColor: Color(0xFF3EBACE),
-        accentColor: Color(0xFFD8ECF1),
         scaffoldBackgroundColor: Color(0xFFF3F5F7),
       ),
-      home: HomeScreen(),
+      home: AnimatedSplash(
+        imagePath: 'assets/images/icon.png',
+        home: HomeScreen(),
+        duration: 2500,
+        type: AnimatedSplashType.StaticDuration,
+      ),
     );
   }
 }
+

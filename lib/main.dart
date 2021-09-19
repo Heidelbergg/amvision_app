@@ -1,5 +1,6 @@
-import 'package:animated_splash/animated_splash.dart';
+import 'package:animated_splash_screen/animated_splash_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:page_transition/page_transition.dart';
 import 'screens/home_screen.dart';
 
 void main() => runApp(MyApp());
@@ -15,11 +16,12 @@ class MyApp extends StatelessWidget {
         primaryColor: Color(0xFF3EBACE),
         scaffoldBackgroundColor: Color(0xFFF3F5F7),
       ),
-      home: AnimatedSplash(
-        imagePath: 'assets/images/icon.png',
-        home: HomeScreen(),
-        duration: 2500,
-        type: AnimatedSplashType.StaticDuration,
+      home: AnimatedSplashScreen(
+        nextScreen: HomeScreen(),
+        splash: "assets/images/icon.png",
+        splashTransition: SplashTransition.fadeTransition,
+        splashIconSize: 400,
+        pageTransitionType: PageTransitionType.bottomToTop,
       ),
     );
   }

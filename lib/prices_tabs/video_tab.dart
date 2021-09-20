@@ -16,6 +16,7 @@ class VideoGraphyState extends State<VideoGraphy> {
       appBar: AppBar(
         backgroundColor: Colors.transparent,
         elevation: 0,
+        leading: BackButton(color: Colors.black),
       ),
       body: buildBody(),
     );
@@ -52,10 +53,10 @@ class VideoGraphyState extends State<VideoGraphy> {
         Container(
           padding: EdgeInsets.all(20),
           child: Text(
-              "(1) Production of 15-30sec. Video (Full HD) 30 min filming including editing: 1.500 kr \n\n"
-              "(2) Production of 2-3 min. Video (Full HD ) 2 hour filming including editing: 3.000,- \n\n"
-              "(3) Production of 4-6 min. Video (Full HD) 4 hour filming including editing: 5.000,- \n\n"
-              "(4) Production of 5-10 min. Video (Full HD) 6 hour filming including editing: 10.000,- \n\n",
+              "Production of 15-30sec. Video (Full HD) 30 min filming including editing: 1.500 kr \n\n"
+              "Production of 2-3 min. Video (Full HD ) 2 hour filming including editing: 3.000,- \n\n"
+              "Production of 4-6 min. Video (Full HD) 4 hour filming including editing: 5.000,- \n\n"
+              "Production of 5-10 min. Video (Full HD) 6 hour filming including editing: 10.000,- \n\n",
               style: TextStyle(fontSize: 18, fontWeight: FontWeight.w200)),
         ),
       ],

@@ -1,6 +1,8 @@
-import 'package:amvision_app/screens/home_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:url_launcher/url_launcher.dart';
 import 'package:cool_alert/cool_alert.dart';
+
+
 
 // Possibly add a reference to a site where booking can be done (Both made for web and mobile platforms)
 
@@ -12,7 +14,6 @@ class Bookings extends StatefulWidget {
 }
 
 class BookingsState extends State<Bookings> {
-  String dropdownValue = '!SEE PRICES TAB FOR MORE INFORMATION!';
 
   @override
   Widget build(BuildContext context) {
@@ -22,6 +23,7 @@ class BookingsState extends State<Bookings> {
       appBar: AppBar(
         backgroundColor: Colors.transparent,
         elevation: 0,
+        leading: BackButton(color: Colors.black),
       ),
       body: buildBody(),
     );
@@ -47,7 +49,49 @@ class BookingsState extends State<Bookings> {
     );
   }
 
+  // Link to form for booking
   Widget booking() {
+
+    return Column(
+      children: [
+        Container(
+          padding: EdgeInsets.only(top: 50, bottom: 150),
+          child: Text("Booking",
+              style: TextStyle(fontSize: 35, fontWeight: FontWeight.w200)),
+        ),
+        Container(
+          padding: EdgeInsets.only(top: 75),
+          alignment: Alignment.center,
+          child: SizedBox(
+            height: 100,
+            width: 200,
+            child: ElevatedButton(
+              style: ButtonStyle(
+                backgroundColor: MaterialStateProperty.all(Colors.grey),
+                elevation: MaterialStateProperty.all(10),
+                shadowColor: MaterialStateProperty.all(Colors.black87),
+                shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                  RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(30),
+                  ),
+                ),
+              ),
+              onPressed: () {
+                launch('https://form.123formbuilder.com/5997884/form');
+              },
+              child: Text(
+                "Go to booking",
+                style: TextStyle(fontSize: 20, fontWeight: FontWeight.w200),
+              ),
+            ),
+          ),
+        ),
+      ],
+    );
+  }
+
+// in-app form
+/*  Widget booking() {
     return Column(
       children: [
         Container(
@@ -216,5 +260,5 @@ class BookingsState extends State<Bookings> {
         ),
       ],
     );
-  }
+  }*/
 }

@@ -16,6 +16,7 @@ class EventsPhotoState extends State<EventsPhoto> {
       appBar: AppBar(
         backgroundColor: Colors.transparent,
         elevation: 0,
+        leading: BackButton(color: Colors.black),
       ),
       body: buildBody(),
     );
@@ -52,9 +53,9 @@ class EventsPhotoState extends State<EventsPhoto> {
         Container(
           padding: EdgeInsets.all(20),
           child: Text(
-              "(1) 10 edited pictures: 1.000,- \n\n"
-              "(2) 15 edited pictures: 1.500,- \n\n"
-              "(3) 20 edited pictures: 2.000,- \n\n",
+              "10 edited pictures: 1.000,- \n\n"
+              "15 edited pictures: 1.500,- \n\n"
+              "20 edited pictures: 2.000,- \n\n",
               style: TextStyle(fontSize: 18, fontWeight: FontWeight.w200)),
         ),
       ],

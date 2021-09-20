@@ -16,6 +16,7 @@ class AboutUsState extends State<AboutUs> {
       appBar: AppBar(
         backgroundColor: Colors.transparent,
         elevation: 0,
+        leading: BackButton(color: Colors.black),
       ),
       body: buildBody(),
     );

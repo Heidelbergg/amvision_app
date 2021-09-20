@@ -16,6 +16,7 @@ class StudioPhotoState extends State<StudioPhoto> {
       appBar: AppBar(
         backgroundColor: Colors.transparent,
         elevation: 0,
+        leading: BackButton(color: Colors.black),
       ),
       body: buildBody(),
     );
@@ -52,9 +53,9 @@ class StudioPhotoState extends State<StudioPhoto> {
         Container(
           padding: EdgeInsets.all(20),
           child: Text(
-              "(1) Portraits for 30 min with 10-15 pictures and 10 edited pictures: 750,- \n\n"
-              "(2) Portraits for 1 hour with 20-30 pictures and 20 edited pictures: 1.500,- \n\n"
-              "(3) Portraits for 2 hours with 40-50 pictures and 30 edited pictures: 3000,- \n\n",
+              "Portraits for 30 min with 10-15 pictures and 10 edited pictures: 750,- \n\n"
+              "Portraits for 1 hour with 20-30 pictures and 20 edited pictures: 1.500,- \n\n"
+              "Portraits for 2 hours with 40-50 pictures and 30 edited pictures: 3000,- \n\n",
               style: TextStyle(fontSize: 18, fontWeight: FontWeight.w200)),
         ),
       ],
